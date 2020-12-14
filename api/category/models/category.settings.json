@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "tags": {
+      "via": "products",
+      "collection": "tag"
+    },
+    "products": {
+      "via": "tags",
+      "collection": "blog"
+    }
+  }
+}

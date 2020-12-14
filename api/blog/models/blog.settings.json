@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Published": {
+      "type": "date"
+    },
+    "Cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Slug": {
+      "type": "string"
+    },
+    "tags": {
+      "collection": "category",
+      "via": "products",
+      "dominant": true
+    },
+    "category": {
+      "model": "category"
+    }
+  }
+}
